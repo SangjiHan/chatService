@@ -1,9 +1,10 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:4682B4,100:AFEEEE&height=200&text=실시간%20채팅%20사이트&fontColor=000000&fontSize=40&width=700&fontAlignY=35)
-### 파일 설치 가이드 : 
+### 파일 설치 가이드 
 파일을 다운로드 받으시고 vs code에서 열어주세요. <br/>
 jdk17을 다운 받으시고 환경변수 편집으로 path를 설정해주세요. <br/>
+Oracel를 설치하고 sql 데이터를 참고하여 테이블을 생성해주세요. <br/>
 
-### 설정파일 생성 가이드 : 
+### 설정파일 생성 가이드 
 charservice/src/resources/ 폴더에 application.properties라는 이름으로 파일을 생성해주세요. <br/>
 아래는 application.properties 안에 작성해야할 내용입니다. 중괄호 안에 내용은 환경설정에 맞게 작성해주세요. <br/>
 spring.application.name=chatservice server.port={톰켓 포트번호} <br/>
@@ -11,12 +12,9 @@ spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XE <br/>
 spring.datasource.username={db 사용자} <br/>
 spring.datasource.password={db 비밀번호} <br/>
 spring.datasource.driver-class-name=oracle.jdbc.OracleDriver <br/>
-
 spring.jpa.hibernate.ddl-auto=update <br/>
-
 media.filepath=chatservice\src\main\resources\static\media <br/>
 spring.servlet.multipart.max-file-size=-1 spring.servlet.multipart.max-request-size=-1 <br/>
-
 size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 message.number=25 <br/>
 
 # 프로젝트 소개 <br/> 
