@@ -10,15 +10,16 @@
 
 
   <div align="center">
-    <img src="https://img.shields.io/badge/HTML5-0000CD?style=for-the-badge&logo=html5&logoColor=white&color=F16529" alt="HTML5 badge">
+    개발 언어 : <img src="https://img.shields.io/badge/HTML5-0000CD?style=for-the-badge&logo=html5&logoColor=white&color=F16529" alt="HTML5 badge">
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=264DE4" alt="CSS3 badge">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000&color=323330" alt="JavaScript badge">
     <img src="https://img.shields.io/badge/JSP-F7E03C?style=for-the-badge&logo=java&logoColor=white&color=323330" alt="JSP badge">
-    <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white&color=005B96" alt="Java badge">
-    <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white&color=000000" alt="Oracle badge">
-    <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white&color=E1E1E1" alt="Maven badge">
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&color=000000" alt="Git badge">
-    <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white&color=4A5B4D" alt="Spring Boot badge">
+    <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white&color=005B96" alt="Java badge"> <br>
+    
+    데이터베이스 : <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white&color=000000" alt="Oracle badge"> <br>
+    빌드 : <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white&color=E1E1E1" alt="Maven badge"> <br>
+    형상관리 : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&color=000000" alt="Git badge"> <br>
+    프레임 워크 : <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white&color=4A5B4D" alt="Spring Boot badge">
     <img src="https://img.shields.io/badge/JPA-007396?style=for-the-badge&logo=java&logoColor=white&color=F8C300" alt="JPA badge">
     <img src="https://img.shields.io/badge/WebSocket-000000?style=for-the-badge&logo=WebSocket&logoColor=white&color=4A4A4A" alt="WebSocket badge">
 </div>
