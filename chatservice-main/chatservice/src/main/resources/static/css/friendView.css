@@ -1,0 +1,97 @@
+#friendViewModal {
+    /*손대지마시오*/
+    width: 400px;
+    height: 450px;
+    display: none;
+    position: absolute;
+    /*여기까지*/
+    border-radius: 7px;
+    background: linear-gradient(to right bottom,#cd07ff,#5effd9);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    text-align: center;
+    padding-top: 50px;
+    border: 2px solid white;
+    z-index: 10;
+}
+
+#firendViewPfp {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#firendViewPfp img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#friendviewDisplayName {
+    font-size: 30px;
+    color: white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#friendViewTable{
+    color: white;
+    font-family: 'Pretendard-Regular';
+    margin: 0 auto;
+    text-align: left;
+}
+
+#friendViewTable tr{
+    height: 30px;
+}
+
+#friendViewTable td:nth-child(even) {
+    color: white;
+    font-family: 'Pretendard-Regular';
+    margin: 0 auto;
+    text-align: left;
+    font-size: 15px;
+    width: 150px;
+    padding-left: 20px;
+}
+
+#friendViewTable td:nth-child(odd) {
+    color: white;
+    font-family: 'Pretendard-Regular';
+    margin: 0 auto;
+    text-align: left;
+    font-size: 12px;
+    width: 90px;
+}
+
+#friendViewChat, #myprofilechaneBtn {
+    border: 1px solid rgb(140, 0, 255);
+    width: 80px;
+    background-color: rgb(140, 0, 255);
+    color: rgb(255, 255, 255);
+    height: 35px;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: 20px;
+    border-radius: 3px;
+    margin-top: 20px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#friendVieWCloseBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#friendVieWCloseBtn img {
+    width: 25px;
+}
+

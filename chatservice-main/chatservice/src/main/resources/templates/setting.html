@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css"> <!-- reset.css -->
+  <link rel="stylesheet" href="/css/setting.css">
+  <link rel="stylesheet" href="/css/updatemyprofile.css">
+
+  <script src="/js/updatemyprofile.js"> </script>
+
+</head>
+<body>
+  <input th:value="${sessionId}" type="hidden" id="sessionId">
+  <div class="left">
+    <div class="settingTitle">사용자 설정</div>
+    <div class="settingNav">
+      <button class="settingCategory selectedCategory" data-content="myAccount" id="myAccount"  onclick="selectCategory(this); myprofile()">내 계정</button>
+      <button class="settingCategory" data-content="profile" id="profile" onclick="selectCategory(this); infochange()">정보 수정</button>
+      <button class="settingCategory" data-content="logout" id="logout" onclick="location.href='/user/logout'">로그아웃</button>
+    </div>
+  </div>
+  
+  <div class="right">
+    
+    <div id="myprofileArea">
+      <!-- 프로필 사진 바꾸기 버튼-->
+        <form  method="post" id="updataPfpform"  enctype="multipart/form-data">
+          <input th:value="${sessionId}" type="hidden" id="sessionId" name="appuserId">
+          <input name="file" type="file" id="fileInput" data-file-update form="updataPfpform" style="display: none;" onchange="updatePfp(event)">
+
+          <button type="button" id="updatePfpbtn">프로필 사진 바꾸기</button>
+      </form>
+      <!-- 내 정보 -->
+      <div class="setTitle" id="myprofile">
+      
+      </div>
+
+    </div>
+    
+    
+    <div class="setTitle" id="infochangeArea">
+      <div id="infochangetitle" >정보 수정</div>
+   
+        <table id="inputPasswordTable">
+          <!-- <tr> 
+            <td>비밀번호 </td> <td><input type="password" id="infochangepassword"> </td>
+          </tr>
+          <tr> 
+            <td>비밀번호 확인 </td> <td><input type="password" id="infochangepasswordcheck"> </td>
+          </tr> -->
+          <tr> 
+            <td>비밀번호 확인</td> <td><input type="password" id="infochangepassword"> <input type="button" id="infochangeSubmit" value="확인" onclick="passwordcheck()"></td>
+          </tr>
+          <!-- <tr> 
+            <td colspan="2"> <input type="button" id="infochangeSubmit" value="확인" onclick="passwordcheck()"> </td>
+          </tr> -->
+
+        </table>
+        <span id="passwordcheckalert"> </span>
+
+      <form id="passwordcheck">
+        <input id="userId" type="hidden" th:value="${sessionId}" name="appuserId">
+        <input id="userpassword" type="hidden" name="appuserPassword">
+      </form>
+    </div>
+
+    <div id="updateform">
+      <div id="updateformPfpdiv">
+        <img id="updateformPfp">  
+      </div>
+
+
+      <table id="updateformTable">
+        <tr>
+          <td> 고유 이름 </td> 
+          <td id="updateformappuserUkName"> </td> 
+          <td> </td>
+        </tr>
+
+        <tr>
+          <td> 이메일 </td> 
+          <td id="updateformappuserEmail"> </td> 
+          <td> </td>
+        </tr>
+        </table>
+
+        <table id="updateformDisplayName">
+          <tr>
+            <td class="updatetag" >디스플레이 이름</td>
+            <td>
+              <input type="text" id="updateDisplayName" class="updateInput" oninput="displaynameVal()">
+            </td>
+            <td>
+              <input type="button" value="수정" onclick="updateDisplayName()" class="updateBtn" id="displayNameupdateBtn">
+            </td>
+            <td id="displayupdated" class="alertmessage"></td>
+          </tr>
+        </table>
+
+          <form id="updateDisplayNameForm">
+            <input id="userDisplaynameId" type="hidden" name="appuserId">
+            <input id="userDisplaynameVal" type="hidden" name="appuserDisplayName">
+          </form>
+
+          <table id="updateformappuserAbout">
+            <tr>
+              <td class="updatetag">소개</td>
+              <td>
+                <input type="text" id="updateAbout" class="updateInput">
+              </td>
+              <td>
+                <input type="button" value="수정" onclick="updateAbout()" class="updateBtn">
+              </td>
+              <td id="aboutupdated" class="alertmessage"></td>
+            </tr>
+          </table>
+  
+            <form id="updateAboutForm">
+              <input id="userAboutId" type="hidden" name="appuserId">
+              <input id="userAboutVal" type="hidden" name="appuserAbout">
+            </form>
+
+            <table id="updateformPassowrd">
+              <tr>
+                <td class="updatetag">비밀번호</td>
+                <td>
+                  <input type="password" id="updatepassword" class="updateInput" oninput="passwordVal()">
+                </td>
+                <td>
+                </td>
+
+                <td id="passwordupdated" class="alertmessage"></td>
+              </tr>
+            </table>
+
+            <table id="updateformPassowrd">
+              <tr>
+                <td class="updatetag">비밀번호 확인</td>
+                <td>
+                  <input type="password" id="updatepasswordcheck" class="updateInput" oninput="passwordcheckVal()">
+                </td>
+                <td>
+                  <input type="button" value="수정" onclick="updatePassword()" class="updateBtn" id="passwordupdateBtn">
+                </td>
+                <td id="passwordupdatedcheck" class="alertmessage"></td>
+              </tr>
+
+            </table>
+    
+              <form id="updatePassowrdForm">
+                <input id="updatePassowrdId" type="hidden" name="appuserId">
+                <input id="updatePassowrdVal" type="hidden" name="appuserPassword">
+              </form>
+
+        
+
+        
+
+
+    </div>
+
+    <button id="escBtn" onclick="goBack()">esc</button>
+  </div>
+  <script src="/js/setting.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+#groupChatScreen {
+    width: calc(100% - 326px);
+    height: calc(100vh - 6px);
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background-image: linear-gradient(#000000, #000000), 
+    linear-gradient(to bottom, rgb(0, 217, 255) 0%, rgb(159, 0, 255)100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    position: absolute;
+    top: 1px;
+    left: 321px;
+    display: none;
+    overflow-y: scroll;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#groupChating {
+    font-family: 'Pretendard-Regular';
+    letter-spacing: 1px;
+    color: #fff;
+    /* background-color: rgb(104, 104, 104); */
+    width: calc(100% - 250px);
+    height: calc(100% - 100px);
+
+    margin: 15px 15px 20px 20px;
+
+    display: flex; 
+   flex-direction: column;
+   border:1px solid black;
+}
+
+#groupchatNav {
+    width: calc(100% - 30px);
+    height: 50px;
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: 25px;
+    margin: 15px 0px 0px 15px;
+}
+
+#groupChatHead {
+    width: 500px;
+    height: 30px;
+    float: left;
+
+    margin: 10px 0px 0px 10px;
+
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+}
+
+#groupChatText {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    border:1px solid rgb(0, 217, 255);
+}
+
+#groupChatTextInput {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: rgb(0, 217, 255);
+    border-style: solid;
+    
+}
+
+#groupChatTextInputBtn {
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    margin-top: 10px;
+    background-image:linear-gradient(to right bottom, rgb(0, 217, 255) 0%, rgb(159, 0, 255)100%);
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    color:white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    text-align:center;
+    line-height: 40px;
+    position: absolute;
+    left:95%;
+    top:88%;
+    transform: translate(-50%,-50%);
+}
+
+#groupchatFriendList {
+    position: absolute;
+    top: 80px;
+    right: 12px;
+    width: 226px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    color: white;
+}
+
+#groupchatFriendListTitle {
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#groupchatUser { 
+    width: 200px;
+    height: 52px;
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+#groupchatUserPfpArea {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin: 1px;
+}
+
+#groupchatUserPfp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+#groupchatUserDisplayName {
+    font-size: 16px;
+    font-family: 'TmoneyRoundWindExtraBold';
+    position: absolute;
+    top: 10px;
+    left:65px;
+}
+
+#groupchatUserUkName{
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    position: absolute;
+    top: 33px;
+    left:65px;
+}
+
+#groupchatInputBox {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: rgb(0, 217, 255);
+    border-style: solid;
+}
+
+.groupChatContent {
+    font-family: 'Pretendard-Regular';
+    letter-spacing: 1px;
+    color: #fff;
+    /* background-color: rgb(104, 104, 104); */
+    width: calc(100% - 250px);
+    height: calc(100% - 180px);
+
+
+    margin: 15px 15px 20px 20px;
+    overflow: hidden;
+    display: flex; 
+   flex-direction: column;
+   border:1px solid black;
+   font-family: 'Pretendard-Regular';
+}
+
+.groupChatBox {
+    width: 98%;
+    height: 100%;
+    overflow-y: scroll;
+    border:1px solid rgb(0, 217, 255);
+}
+
+
+.groupChatBox::-webkit-scrollbar {
+    width: 3px;
+}
+
+.groupChatBox::-webkit-scrollbar-thumb {
+    width: 3px;
+    background-color: #ffffff;
+}
+
+.groupChatBox::-webkit-scrollbar-track {
+    width: 3px;
+}
+
+
+
+.groupChatInputBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: rgb(0, 217, 255);
+    border-style: solid;
+}
+
+.groupChatMediaContainer {
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.groupChatTextContainer {
+    width: 60%;
+    height: 100%;
+}
+
+.groupChatText {
+    background-color: rgb(255, 255, 255);
+    user-select: none;
+    color: black;
+    font-size: 15px;
+    resize: none;
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    border:2px solid rgb(0, 217, 255);
+    font-family: 'Pretendard-Regular';
+    line-height: 40px;
+}
+
+.groupChatSubmitContainer {
+    margin-left: 30px;
+}
+
+.groupChatSubmitButton {
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    float: right;
+    margin-top: 15px;
+    background-image:linear-gradient(to right bottom, rgb(0, 217, 255) 0%, rgb(159, 0, 255)100%);
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    color:white;
+    font-family: 'TmoneyRoundWindExtraBold'
+}
+
+/*그룹챗 클릭시*/
+.selectedDmlist {
+    background-image: linear-gradient(to bottom, rgb(0, 217, 255) 0%, rgb(159, 0, 255) 100%);
+}
+
+.groupchatIndex {
+    overflow-x: auto;
+}
+
+.groupChatMediaButton {
+    margin-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.messageInputBox {
+    width: calc(100% - 250px) !important;
+    height: 60px !important;
+    position: absolute;
+    top: 820px;
+    display: flex;
+}
+
+.messageText {
+    width: 100% !important;
+}
+
+
+/* #messageForm {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+#messageForm textarea {
+    height: auto !important;
+    min-height: 0 !important;
+    line-height: normal;
+} */
+
+/* .directmessage{
+    height: calc(100vh - 400px);
+    position: absolute;
+    top: 110px;
+    left: 9px;
+
+} */
+
+
+
+.edit-button, .cancel-button {
+    background-color: #007BFF; /* Primary blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+}
+
+.edit-button:hover, .cancel-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.cancel-button {
+    background-color: #DC3545; /* Primary red color */
+}
+
+.cancel-button:hover {
+    background-color: #b02a37; /* Darker red on hover */
+}
+
+textarea.edit-textarea {
+    width: 93%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+textarea.edit-textarea:focus {
+    border-color: rgb(159, 0, 255);
+    outline: none;
+}
+
+.message-edited {
+    font-size: 12px;
+    color: rgb(101, 101, 101);
+    display: block;
+    margin-top: 5px; 
+}
+
+.cancel-reply {
+    cursor: pointer;
+}
+
+.cancel-reply:hover {
+    color: gray;
+}

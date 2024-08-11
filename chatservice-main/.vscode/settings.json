@@ -1,0 +1,6 @@
+{
+  "maven.view": "flat",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "liveServer.settings.port": 5501,
+  "java.configuration.updateBuildConfiguration": "interactive"
+}

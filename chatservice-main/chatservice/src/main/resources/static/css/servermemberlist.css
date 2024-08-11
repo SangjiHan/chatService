@@ -1,0 +1,48 @@
+
+.onlineMembers{
+    position: absolute;
+    top: 80px;
+    right: 12px;
+    width: 226px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    color: white;
+}
+
+
+#servermemberDiv {
+    width: 200px;
+    height: 52px;
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+#servermemberPfpDiv {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin: 1px;
+}
+
+#servermemberPfpDiv img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+#servermemberName {
+    font-size: 16px;
+    font-family: 'TmoneyRoundWindExtraBold';
+    position: absolute;
+    top: 18px;
+    left:65px;
+    color: white;
+}

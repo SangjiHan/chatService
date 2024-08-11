@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/create_server.css">
+  <title>Document</title>
+</head>
+<script src="/js/serverCreation.js"></script>
+<body>
+  <h1>Main APp</h1>
+
+  <button onclick="location.href='/user/logout'">로그아웃</button>
+  <button onclick="createServer()">서버 추가하기</button>
+
+  <div id="createServerMain"> 
+    <div id="closeBtn" onclick="closeModal()"> <img src="../image/close.png" > </div>
+    <div id="title"> 서버를 만들어 보세요 </div>
+    <div id="createServerInfo"> 서버는 친구들과 함께 어울리는 공간입니다. <br>
+      서버를 만들어 친구들과 대화를 시작하세요.
+    </div>
+    <button id="createServerBtn" onclick="moveSecondPage()"> 서버 만들기 </button>
+  </div>
+    
+  <div id="createServerDetail">
+      
+
+      <div id="closeBtn" onclick="closeModal()"> <img src="../image/close.png" > </div>
+      <div id="title"> 서버 만들기 </div>
+      <div id="info"> 서버의 이름과 아이콘을 만들고 <br> 
+      서버를 소개해주세요.
+      </div>
+
+      <form action="server/create" method="post" id="serverCreateForm"  enctype="multipart/form-data">
+        <div id="uploadPicture">
+          <span id="upload"> UPLOAD </span>
+        </div> 
+          <input name="file" type="file" 
+          data-file-upload form="dataFileUpload">
+          <div id="preview"> 
+          </div>
+
+
+        <div id="serverNameTag"> 서버 이름 </div>
+        <input type="text" id="serverNameInput" name="serverName"> 
+
+        <div id="serverInfoTag"> 서버 설명 </div>
+        <input type="text" id="serverInfoInput" name="serverDesc">
+        
+        <input type="submit" value="만들기" id="createServerBtn" onclick="serverSubmit()" >
+        <input type="hidden" name="serverOwner" th:value="${sessionId}">
+        <input type="hidden" name="serverPfp">
+      </form>
+
+        <form method="post" id="dataFileUpload">
+        </form>
+
+        <form id="severMemberForm">
+          <input name="serverMemberServer" type="hidden" id="serverMemberServer">
+          <input name="serverMemberUser" type="hidden" id="serverMemberUser">
+        </form>
+
+        <form id="channelForm">
+          <input name="channelName" type="hidden" id="channelName">
+          <input name="channelServer" type="hidden" id="channelServer">
+        </form>
+
+    </div>
+</body>
+</html>

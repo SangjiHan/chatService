@@ -1,0 +1,124 @@
+#dmModal {
+    width: 376px;
+    height: 320px;
+
+    border-radius: 7px;
+    background: linear-gradient(to right bottom,#cd07ff,#5effd9);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+
+    position: absolute;
+    top:30%;
+    left:550px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    display: none;
+    border: 2px solid white;
+}
+
+#dmModalList {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 200px;
+}
+
+#dmModalList::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+#dmModalList::-webkit-scrollbar-thumb{
+    height: 8px;
+    width: 8px;
+    background-color: rgb(140, 0, 255);
+}
+
+#dmModalList::-webkit-scrollbar-track{
+    height: 8px;
+    width: 8px;
+}
+
+#dmModalList::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+
+#dmModalTitle {
+    margin: 20px 0 20px 0;
+    font-size: 25px;
+}
+
+.dmFriendList{
+    width: 360px;
+    height: 60px;
+    margin: 5px auto;
+}
+
+.dmFriendPfpArea {
+    margin-top: 5px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.dmFriendPfpArea img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.dmFriendDisplayName {
+    width: 150px;
+    height: 50px;
+    margin-top: 5px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 50px;
+}
+
+.dmFriendListCheckbox {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+#dmSubmitListBtn {
+    font-size: 14px;
+    background-color: rgb(140, 0, 255);
+    width: 150px;
+    height: 35px;
+    color:white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    border: 1px solid rgb(140, 0, 255);
+    border-radius: 3px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#dmMemberList {
+    width: 376px;
+    height: 320px;
+    position: absolute;
+    top:30%;
+    left:1000px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    display: none;
+    border: 2px solid white;
+}
+
+#dmcloseBtn{
+    float: right;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width: 30px;
+}

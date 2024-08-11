@@ -1,0 +1,294 @@
+
+.chatContent{
+    height: calc(100% - 180px);
+    display: flex; 
+    flex-direction: column;
+    border:1px solid black;
+    font-family: 'Pretendard-Regular';
+}
+
+.messageBox{
+    width: 98%;
+    height: 100%;
+    overflow-y: scroll;
+    border:1px solid rgb(0, 217, 255);
+    
+}
+
+.messageInputBox {
+    margin-top: 10px;
+    height: 60px !important;
+    position: absolute;
+    top: 820px;
+    width: calc(100% - 250px) !important;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: rgb(0, 217, 255);
+    border-style: solid;
+}
+
+.messageText {
+    width: 100% !important;
+}
+
+.messageBox::-webkit-scrollbar {
+    width: 3px;
+}
+
+.messageBox::-webkit-scrollbar-thumb {
+    width: 3px;
+    background-color: #ffffff;
+}
+
+.messageBox::-webkit-scrollbar-track {
+    width: 3px;
+}
+
+.message{
+    margin: 20px 10px 0 10px;
+    display: block;
+    position: relative;
+}
+
+#messageTemplate{
+    display: none;
+}
+
+.messageInfo{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.moreOptions{
+    cursor: pointer;
+}
+
+.messageContent{
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 20px 20px 20px 10px;
+    width: fit-content;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.messageTextContainer{
+    width: 60%;
+    height: 100%;
+    position: relative;
+}
+
+.messageTextContainer > span{
+    position: absolute;
+    top : -10px;
+    font-size: 15px;
+}
+
+.messageText{
+    background-color: rgb(255, 255, 255);
+    user-select: none;
+    color: black;
+    font-size: 16px;
+    resize: none;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    border:2px solid rgb(0, 217, 255);
+    font-family: 'Pretendard-Regular';
+    line-height: 40px;
+}
+
+.messageMediaContainer, .messageSubmitContainer{
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messageMediaContainer{
+    margin-right: 30px;
+}
+
+.messageSubmitContainer{
+    margin-left: 30px;
+}
+
+.messageMediaButton, .mediaCancelButton{
+    margin-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.messageSubmitButton {
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    float: right;
+    margin-top: 10px;
+    background-image:linear-gradient(to right bottom, rgb(0, 217, 255) 0%, rgb(159, 0, 255)100%);
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    color:white;
+    font-family: 'TmoneyRoundWindExtraBold'
+}
+
+.messageMediaDisplayBox{
+    width: 100%;
+    display: flex;
+}
+
+.messageMediaDisplayBox > div{
+    display: flex;
+    position: relative;
+}
+
+.mediaCancelButton{
+    position: absolute;
+    top: -20px;
+    right: 10px;
+}
+
+#displayMessagePfp {
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+}
+
+.messageInfoUserName {
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.messageInfoRegDate {
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.messageInfoCore {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.messageInfoUserPfp {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.moreOptions {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.moreOptionsModal{
+    background-color: black;
+    border: 1px solid rgb(159, 0, 255);
+    position: absolute;
+    right: 10px;
+    top: 30px
+}
+
+.messageReplyButton, .messageDeleteButton, .messageEditButton {
+    margin: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.messageReplyButton:hover{
+    cursor: pointer;
+    color: rgb(159, 0, 255);
+}
+
+.messageDeleteButton:hover{
+    cursor: pointer;
+    color: rgb(159, 0, 255);
+}
+
+.messageEditButton:hover{
+    cursor: pointer;
+    color: rgb(159, 0, 255);
+}
+
+
+
+.noneDisplay{
+    display: none;
+}
+
+.blockDisplay{
+    display: block;
+}
+
+.message {
+    margin: 10px 10px;
+}
+
+#messageForm {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+#messageForm textarea {
+    height: auto !important;
+    min-height: 0 !important;
+    line-height: normal;
+}
+
+.edit-button, .cancel-button {
+    background-color: #007BFF; /* Primary blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+}
+
+.edit-button:hover, .cancel-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.cancel-button {
+    background-color: #DC3545; /* Primary red color */
+}
+
+.cancel-button:hover {
+    background-color: #b02a37; /* Darker red on hover */
+}
+
+textarea.edit-textarea {
+    width: 93%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+textarea.edit-textarea:focus {
+    border-color: rgb(159, 0, 255);
+    outline: none;
+}
+
+.message-edited {
+    font-size: 12px;
+    color: rgb(101, 101, 101);
+    display: block;
+    margin-top: 5px; 
+}

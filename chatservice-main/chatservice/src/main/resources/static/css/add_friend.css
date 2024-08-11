@@ -1,0 +1,165 @@
+#addFriendMain {
+    width: 376px;
+    height: 300px;
+
+    border-radius: 7px;
+    background: linear-gradient(to right bottom,#cd07ff,#5effd9);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    display: none;
+    border: 2px solid white;
+}
+
+#addFriendMainclose {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+#typeLabel {
+    font-size: 15px;
+}
+
+#addFriendMain #addFriendSelect {
+    padding: 20px 10px 10px 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+#addFriendMain #addFriendSelect #type {
+    width: 160px;
+    border: 1px solid rgb(255, 255, 255);
+    height: 30px;
+    font-size: 15px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+#addFriendMain #addFriendInput {
+    width: 360px;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: 15px;
+    margin: 0 0 30px 0;
+}
+
+#addFriendMain #addFriendBtn {
+    font-size: 14px;
+    float: right;
+    margin : 30px 20px 10px 20px;
+    background-color: rgb(140, 0, 255);
+    width: 80px;
+    height: 35px;
+    color:white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    border: 1px solid rgb(140, 0, 255);
+    border-radius: 3px;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+#checkFriend {
+    text-align: center; 
+    vertical-align: middle; 
+    width: 372px;
+    height: 80px;
+    padding-top: 5px;
+    overflow-y: scroll;
+
+    opacity: 0;
+    margin-left: 1px;
+}
+
+#checkFriend::-webkit-scrollbar {
+    width: 5px;
+}
+
+#checkFriend::-webkit-scrollbar-thumb {
+    width: 5px;
+    color: white;
+    border: 1px solid rgb(140, 0, 255);
+    background-color: rgb(140, 0, 255);
+}
+
+#checkFriend::-webkit-scrollbar-track {
+    width: 5px;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+}
+
+#friendInfoIndex {
+    font-family: 'Pretendard-Regular';
+    color: white;
+    opacity: 1; 
+    margin: 0 auto;
+}
+
+
+#friendInfo {
+    font-family: 'Pretendard-Regular';
+    color: white;
+    opacity: 1;
+    margin: 0 auto;
+}
+
+
+#friendEmailTag, #friendNameTag, #friendDisplayNameTag {
+    height: 25px;
+    width: 110px;
+    font-size: 13px;
+    text-align: center; 
+    vertical-align: middle; 
+}
+
+#friendImgTag {
+    height: 25px;
+    width: 50px;
+    font-size: 13px;
+    text-align: center; 
+    vertical-align: middle; 
+}
+
+#addfriendEmail,#addfriendEmail,#addfriendDisplayName {
+    height: 50px;
+    width: 110px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    text-align: center; 
+    vertical-align: middle; 
+    font-weight: 300;
+}
+
+#friendImg {
+    height: 50px;
+    width: 50px;
+    font-size: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center; 
+    vertical-align: middle;
+    font-weight: 300;
+    border-radius: 50%;
+    padding-left: 5px;
+    
+}
+
+#friendImg img {
+    border: 2px solid rgb(255, 255, 255);
+}

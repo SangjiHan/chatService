@@ -1,0 +1,99 @@
+#friendWaitingList {
+    display:none;
+}
+
+#receiveTitle, #sendTitle {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    margin: 20px;
+    color: white;
+}
+
+#friendsend, #friendreceive {
+    width: 98%;
+    height: 300px;
+    color: white;
+    margin: 0 auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+#friendsend::-webkit-scrollbar, #friendreceive::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+#friendsend::-webkit-scrollbar-thumb, #friendreceive::-webkit-scrollbar-thumb {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(140, 0, 255);
+}
+
+#friendsend::-webkit-scrollbar-track, #friendreceive::-webkit-scrollbar-track {
+    height: 10px;
+    width: 10px;
+}
+
+#friendsend::-webkit-scrollbar-corner, #friendreceive::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+#friendreceiveIndex, #friendsendIndex {
+    width: 1100px;
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#friendreceiveIndex td, #friendsendIndex td {
+    width: 220px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    vertical-align : middle;
+}
+
+#friendsendList, #friendreceiveList {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#friendsendList td, #friendreceiveList td {
+    width: 220px;
+    height: 80px;
+    color: white;
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+    vertical-align : middle;
+}
+
+#receiveListBtn, #sendListBtn, #deleteBtn {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Pretendard-Regular';
+    background-color: blueviolet;
+    color: white;
+    vertical-align : middle;
+    line-height: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#receiveListBtn {
+    margin-right: 10px;
+}
+
+#friendreceiveNo, #friendsendNo {
+    font-family: 'Pretendard-Regular';
+    color: rgb(160, 160, 160);
+    margin: 20px;
+    /* padding: 10px 0 0 50px; */
+    font-size: 15px;
+}
+
+
+

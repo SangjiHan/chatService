@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- <script src="js/join.js"></script> -->
+<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css"> <!-- reset.css -->
+<link rel="stylesheet" href="/css/channels_server.css">
+<link rel="stylesheet" href="/css/channel/channel_add.css">
+<link rel="stylesheet" href="/css/channel/chat_content.css">
+<link rel="stylesheet" href="/css/servermemberlist.css">
+<link rel="stylesheet" href="/css/create_server.css">
+<link rel="stylesheet" href="/css/serveradd.css">
+<link rel="stylesheet" href="/css/media/media.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+<script src="/js/channels_server.js"></script>
+<script src="/js/channel/channelAdd.js"></script>
+<script src="/js/serverCreation.js"></script>
+<script src="/js/server/serverlist.js"></script>
+<script src="/js/server/serverjoin.js"></script>
+<script src="/js/channel/goToChannel.js"></script>
+<script src="/js/message/messageGeneral.js"></script>
+<script src="/js/message/channelMessageGeneral.js"></script>
+<script src="/js/message/messageUpload.js"></script>
+<script src="/js/message/messageWS.js"></script>
+<script src="/js/server/servermemberlist.js"></script>
+<script src="/js/message/moreOptions.js"></script>
+<script src="/js/message/moreOptionsWS.js"></script>
+<!-- <script src="/js/showprofile.js"></script> -->
+<!-- <script src="/js/channels_main.js"></script> -->
+
+<body>
+  <input th:value="${currentServer.serverId}" type="hidden" id="serverId">
+  <input th:value="${currentChannelId}" id="currentChannelId" type="hidden" >
+  <input th:value="${isServerOwner}" type="hidden">
+  <input th:value="${sessionId}" type="hidden" id="sessionId">
+  <div class="left">
+    <div class="servers"> <!--서버 목록-->
+      <div class="mainServerNav" onclick="location.href='/'"><img id="logo" src="/image/blacklogo.png" alt="logo image" width="40" height="40"></div> <!-- 현재 선택한 서버에 맞게 모양 바꾸기 -->
+      <div class="serverContainer"> <!-- 티임리프 데이터 -->
+        <div class="server" th:each="server: ${serverList}" th:id="${server.serverId}">
+          <a th:href="@{${'/server/' + server.serverId}}">
+            <img th:src="@{${'/media/serverpfp/' + server.serverPfp}}" 
+            height="50" width="50" style="border-radius: 25px;">
+          </a>
+        </div>
+      </div> 
+      <div class="server"  id="addServer" onclick="createServer()">+</div>
+    </div>
+  </div>
+
+  <div class="middle">
+    <div class="serverName" th:text="${currentServer.serverName}">&nbsp;&nbsp; </div> <!--티임 리프 추가-->
+    <div th:if="${isServerOwner == true}">
+      <button onclick="openChannelModal()" id="openChannelBtn">채널 추가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</button>
+    </div>
+    <div id="channelContainer"> <!--체널 목록-->
+      <div class="chatChannel" th:each="channel : ${channelList}" 
+      th:id="${channel.channelId}" th:text="${channel.channelName}"
+      th:classappend="${currentChannelId == channel.channelId} ? selectedChannel : null" onclick="goToChannel(this)">
+        &nbsp;
+      </div>
+    </div>
+    <!--
+    <div class="chatChannel" id="chatChannel1" data-content="chatChannel1">&nbsp;일반</div>
+    <div class="chatChannel" id="chatChannel2" data-content="chatChannel2">&nbsp;일반2</div>
+    <div class="chatChannel" id="chatChannel3" data-content="chatChannel3">&nbsp;일반3</div>
+    <div class="myStatus"></div> -->
+    <div class="myStatus">
+      <div id="myProfile"> </div>
+      <button onclick="location.href='/settings'" id="settingsBtn"><img src='/image/settings.png' width="20px"></button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="serverNavigation">
+      <div class="chatChannelName" th:text="${channelName}"></div>
+      <div class="chatChannelSearch">검색하기</div>
+    </div>
+
+    <!--메세지 탬플릿-->
+    <div id="messageTemplate" class="message">
+      <div class="messageReplyToInfo"></div>
+      <div class="messageInfo">
+        <div class="messageInfoCore">
+          <img class="messageInfoUserPfp" height="30">
+          <span class="messageInfoUserName displayMessageInfoText"></span>
+            <span class="messageInfoRegDate displayMessageInfoText"></span>
+          </div>
+          <button class="moreOptions"><img src="/image/more-options.png" height="10">
+          </button>
+        <div class="moreOptionsModal noneDisplay">
+          <!--
+          <button class="messageReplyButton">답글 달기</button>
+          <button class="messageEditButton noneDisplay">수정 하기</button>
+          <button class="messageDeleteButton noneDisplay">삭제 하기</button>
+          -->
+        </div>
+      </div>
+      <div class="messageContent">
+        <div class="displayMessageText"></div>
+        <div class="displayMessageMedia">
+        </div>
+      </div>
+    </div>
+    <!--챗 박스-->
+    <div class="chatContent">
+      <div class="messageBox"> <!--메세지 전체 부분-->
+
+        <!--
+        <div class="message" th:each="message: ${messages}" th:id="${message.displayMessageEntity.displayMessageId}">
+          <div class="messageTextPart"> 메세지 텍스트 부분
+            <img height="30" th:src="@{${'/media/userpfp/' + message.displayMessageEntity.displayMessagePfp}}">
+            <span th:text="${message.displayMessageEntity.displayMessageUserName}" class="displayMessageText"></span>
+            <span th:text="${message.displayMessageEntity.displayMessageRegDate}" class="displayMessageText"></span>
+            <div th:text="${message.displayMessageEntity.displayMessageContent}" class="displayMessageText"></div>
+          </div>
+
+          <div class="messageMediaPart"> 메세지 미디어 부분
+             <span th:each="messageMedium : ${message.messageMediaEntities}">
+              <video th:if="${#strings.contains(messageMedium.messageMediaType, 'video')}" 
+              th:src="@{${'/media/message/' + messageMedium.messageMediaFileName}}" height="150" controls></video>
+              <img th:if="${#strings.contains(messageMedium.messageMediaType, 'image')}" 
+              th:src="@{${'/media/message/' + messageMedium.messageMediaFileName}}" height="150">
+            </span>
+          </div>
+        </div> -->
+
+      </div>
+
+      <div class="messageMediaDisplayBox"> <!-- 인풋 된 미디어 디스플레이-->
+
+      </div>
+
+      <div class="messageInputBox"> <!-- 메세지 인풋 박스-->
+          <div class="messageMediaContainer">
+            <div class="messageMediaButton" onclick="openMediaSelection()">
+              +
+            </div>
+          </div>
+          <div class="messageTextContainer">
+            <span></span>
+            <textarea name="messageContent" 
+             form="messageForm" class="messageText"></textarea>
+          </div>
+          <div class="messageSubmitContainer">
+            <button class="messageSubmitButton" onclick="submitMessage()">작성</button>
+          </div>
+      </div>
+    </div> 
+
+    <!--메세지 폼-->
+    <form id="messageForm">
+      <input id="fileInput" name="files" type="file" multiple="multiple" style="visibility: hidden">
+      <input name="messageUser" th:value="${sessionId}" type="hidden">
+      <input name="messageChannel" th:value="${currentChannelId}" type="hidden">
+      <input name="messageReplyTo" id="messageReplyTo" type="hidden">
+    </form>
+
+    <!--서버 멤버 리스트-->
+    <div class="onlineMembers" id="servermemberList">
+    </div>
+  </div>
+
+  
+  <!--체널 추가 모달-->
+    <div id="channelAddModalContainer" style="display: none;">
+      <div id="channelAddModal">
+        <a onclick="closeChannelModal()">
+          <img src="/image/close.png" width="25px" id="closeChannelBtn">
+        </a>
+        <form id="channelAddForm">
+          <input type="text" placeholder="채널명" name="channelName" id="channelNameinput"> <br>
+          <input type="hidden" th:value="${currentServer.serverId}" name="channelServer">
+          <button onclick="addChannel(event)" id="channelInputBtn">추가하기</button>
+        </form>
+      </div>  
+    </div>
+  
+    <!-- 서버 추가 모달-->
+    <!-- <div id="createServerMain" class="modal" style="display:none;">
+      <div id="closeBtn" onclick="closeModal()"> <img src="/image/close.png"> </div>
+      <div id="title"> 서버를 만들어 보세요 </div>
+      <div id="createServerInfo"> 서버는 친구들과 함께 어울리는 공간입니다. <br>
+        서버를 만들어 친구들과 대화를 시작하세요.
+      </div>
+      <button id="createServerBtn" onclick="moveSecondPage()"> 서버 만들기 </button>
+    </div>
+
+    <div id="createServerDetail">
+      <div id="closeBtn" onclick="closeModal()"> <img src="/image/close.png"> </div>
+      <div id="title"> 서버 만들기 </div>
+      <div id="info"> 서버의 이름과 아이콘을 만들고 <br> 
+      서버를 소개해주세요.
+      </div>
+
+      <form method="post" id="serverCreateForm" enctype="multipart/form-data">
+        <div id="uploadPicture">UPLOAD</div>
+        <input name="file" type="file" data-file-upload form="dataFileUpload" id="fileUploadBtn">
+        <div id="preview"></div>
+        <div id="serverNameTag"> 서버 이름 </div>
+        <input type="text" id="serverNameInput" name="serverName">
+
+        <div id="serverInfoTag"> 서버 설명 </div>
+        <input type="text" id="serverInfoInput" name="serverDesc">
+        <input type="button" value="만들기" id="createServerBtn" onclick="uploadFile(event)">
+        <input type="hidden" name="serverOwner" th:value="${sessionId}">
+        <input type="hidden" name="serverPfp" data-server-pfp>
+      </form>
+
+      <form method="post" id="dataFileUpload"></form>
+      <form id="severMemberForm">
+        <input name="serverMemberServer" type="hidden" id="serverMemberServer">
+        <input name="serverMemberUser" type="hidden" id="serverMemberUser">
+      </form>
+      <form id="channelForm">
+        <input name="channelName" type="hidden" id="channelName">
+        <input name="channelServer" type="hidden" id="channelServer">
+      </form>
+    </div> -->
+
+    <!-- 서버 찾기 모달-->
+  <div id="serverAdd">
+    <div id="serverAddTitle"> 서버 추가 </div>
+    <img src="image/close.png" width="25px" onclick="closeserverAdd()" id="severAddClose">
+    <div id="serverTotalArea"> </div>
+  </div>
+  
+  <!--서버 가입 폼-->
+  <form id="serverJoinForm">
+    <input type="hidden" id="serverMemberUser" name="serverMemberUser">
+    <input type="hidden" id="serverMemberServer" name="serverMemberServer">
+  </form>
+
+  <!-- 서버 만들기 모달-->
+  <div id="createServerMain"> 
+    <div id="closeBtn" onclick="closeModal()"> <img src="/image/close.png" > </div>
+    <div id="title"> 서버를 만들어 보세요 </div>
+    <div id="createServerInfo"> 서버는 친구들과 함께 어울리는 공간입니다. <br>
+      서버를 만들어 친구들과 대화를 시작하세요.
+    </div>
+    <button id="createServerBtn" onclick="moveSecondPage()"> 서버 만들기 </button>
+  </div>
+    
+  <div id="createServerDetail">
+    <div id="closeBtn" onclick="closeModal()"> <img src="/image/close.png" > </div>
+    <div id="title"> 서버 만들기 </div>
+    <div id="info"> 서버의 이름과 아이콘을 만들고 <br> 
+    서버를 소개해주세요.
+    </div>
+
+    <form  method="post" id="serverCreateForm"  enctype="multipart/form-data">
+      <div id="uploadPicture">
+        UPLOAD
+      </div>
+      <input name="file" type="file" 
+      data-file-upload form="dataFileUpload" id="fileUploadBtn">
+      <div id="preview"></div>
+      <div id="serverNameTag"> 서버 이름 </div>
+      <input type="text" id="serverNameInput" name="serverName"> 
+
+      <div id="serverInfoTag"> 서버 설명 </div>
+      <input type="text" id="serverInfoInput" name="serverDesc">
+      
+      <input type="button" value="만들기" id="createServerBtn" onclick="uploadFile(event)" >
+      <input type="hidden" name="serverOwner" th:value="${sessionId}">
+      <input type="hidden" name="serverPfp" data-server-pfp >
+    </form>
+
+    <form method="post" id="dataFileUpload"></form>
+
+    <form id="severMemberForm">
+      <input type="hidden" id="serverMemberServer" name="serverMemberServer" >
+      <input  type="hidden" id="serverMemberUser" name="serverMemberUser">
+    </form>
+
+    <form id="channelForm">
+      <input name="channelName" type="hidden" id="channelName">
+      <input name="channelServer" type="hidden" id="channelServer">
+    </form>
+  </div>
+
+  <!--이미지 확대 관련-->
+  <div class="expandedImage noneDisplay">
+    <img class="closeExpandedImage noneDisplay" src="/image/close.png" onclick="closeExpandedImage()">
+    <img class="expandedImageContent" height="500">
+  </div>
+
+  <div class="expandedVideo noneDisplay">
+    <img class="closeExpandedImage noneDisplay" src="/image/close.png" onclick="closeExpandedImage()">
+    <video class="expandedVideoContent" controls="controls"></video>
+  </div>
+  <img class="darkCover noneDisplay" onclick="closeExpandedImage()">
+</body>
+</html>

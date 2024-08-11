@@ -1,0 +1,60 @@
+
+
+#channelAddModal{
+    width: 376px;
+    height: 180px;
+
+    border-radius: 7px;
+    background: linear-gradient(to right bottom,#cd07ff,#5effd9);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(136, 115, 115);
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+#channelAddModal > a{
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+} 
+
+#closeChannelBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#channelNameinput {
+    width: 360px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 3px;
+    font-size: 15px;
+    border: 1px solid white;
+    margin-top: 40px;
+}
+
+#channelInputBtn {
+    font-size: 15px;
+    float: right;
+    margin : 20px;
+    background-color: rgb(159, 0, 255);
+    width: 100px;
+    height: 45px;
+    border: 1px solid rgb(159, 0, 255);
+    border-radius: 3px;
+    color:white;
+    font-family: 'TmoneyRoundWindExtraBold';
+}

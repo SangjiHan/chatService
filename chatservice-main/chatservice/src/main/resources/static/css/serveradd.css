@@ -1,0 +1,127 @@
+#serverAdd {
+    width: 376px;
+    height: 500px;
+
+    border-radius: 7px;
+    background: linear-gradient(to right bottom,#cd07ff,#5effd9);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'TmoneyRoundWindExtraBold';
+    display: none;
+    border: 2px solid white;
+}
+
+#serverAddTitle {
+    display: inline-block;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+#serverListTotal {
+    font-family: 'Pretendard-Regular';
+    width: 376px;
+    height: 420px;
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+#serverListTotal::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+#serverListTotal::-webkit-scrollbar-thumb{
+    height: 10px;
+    width: 10px;
+    background-color: rgb(140, 0, 255);
+}
+
+#serverListTotal::-webkit-scrollbar-track{
+    height: 10px;
+    width: 10px;
+}
+
+#serverListTotal::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+
+#severAddClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#serverListArray {
+    width: 350px;
+    display: inline-block;
+    height: 60px;
+    position: relative;
+    overflow-y: auto;
+}
+
+#serverListPfpDiv {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+}
+
+#serverListPfpDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+#serverListName {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    width: 200px;
+    top: 12px;
+    left: 80px;
+    text-align: left;
+}
+
+#serverListDesc {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    width: 200px;
+    top: 35px;
+    left: 80px;
+    text-align: left;
+}
+
+#serverJoinBtn {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Pretendard-Regular';
+    background-color: blueviolet;
+    color: white;
+    vertical-align : middle;
+    line-height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid blueviolet;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+#createServerBtn {
+    cursor: pointer;
+}

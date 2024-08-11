@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css"> <!-- reset.css -->
+<link rel="stylesheet" href="/css/channels_main.css">
+<link rel="stylesheet" href="/css/create_server.css">
+<link rel="stylesheet" href="/css/add_friend.css">
+<link rel="stylesheet" href="/css/requestfriend.css">
+<link rel="stylesheet" href="/css/friendlist.css">
+<link rel="stylesheet" href="/css/friendView.css">
+<link rel="stylesheet" href="/css/serveradd.css">
+<link rel="stylesheet" href="/css/dmModal.css">
+<link rel="stylesheet" href="/css/groupchat.css">
+<link rel="stylesheet" href="/css/channel/chat_content.css">
+<link rel="stylesheet" href="/css/media/media.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+<script src="/js/channels_main.js"></script>
+<script src="/js/serverCreation.js"></script>
+<script src="/js/addFriend.js"></script>
+<script src="/js/server/serverlist.js"></script>
+<script src="/js/server/serverjoin.js"></script>
+<script src="/js/friendlist.js"></script>
+<script src="/js/directMessage.js"></script>
+<script src="/js/showprofile.js"></script>
+<script src="/js/friendDM.js"></script>
+<script src="/js/message/messageUpload.js"></script>
+<script src="/js/message/messageGeneral.js"></script>
+<script src="/js/groupchat/groupChatWS.js"></script>
+<script src="/js/groupchat/groupChatMessageGeneral.js"></script>
+<script src="/js/message/moreOptions.js"></script>
+<script src="/js/message/moreOptionsWS.js"></script>
+
+<body>
+  <input th:value="${sessionId}" type="hidden" id="sessionId">
+  <div class="left">
+    <div class="servers">
+      <div class="mainServerNav"><img id="logo" src="/image/blacklogo.png" alt="logo image" width="40" height="40"></div>
+      <div class="serverContainer"> <!-- 티임리프 데이터 -->
+        <div class="server" th:each="server: ${serverList}" th:id="${server.serverId}">
+          <a th:href="@{${'/server/' + server.serverId}}">
+            <img th:src="@{${'media/serverpfp/' + server.serverPfp}}">
+          </a>
+        </div>
+      </div>
+      <div class="server"  id="addServer" onclick="createServer()">+</div>
+    </div>
+  </div>
+
+  <div class="middle">
+    <div class="friends" onclick="mainFriend()">&nbsp;&nbsp;친구</div>
+    <div class="createDirectmessage" onclick="directMessage()">다이렉트 메세지&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</div>
+
+
+    <!-- 그룹 목록 리스트-->
+    <div class="directmessage" id="groupchatList">
+      
+    </div>
+
+
+    <div class="myStatus">
+      <div id="myProfile"> </div>
+      <button onclick="location.href='/settings'" id="settingsBtn"><img src='/image/settings.png' width="20px"> </button>
+    </div>
+  </div>
+
+  <div class="right">
+    <!-- friends(기본 값) | directmessage 를 눌렀을 때 다르게 나타남 -->
+    <div class="friendNavigation">
+      <div class="fn" id="fn-friend">친구</div>
+      <div class="fn" id="fn-online" onclick=" toggleAllModals(), changeTextStyle(this)">온라인</div>
+      <div class="fn" id="fn-all" onclick="getFriendListId(), toggleAllModals(), changeTextStyle(this)">모두</div>
+      <div class="fn" id="fn-waiting" onclick="requestion(), toggleAllModals(), changeTextStyle(this)">요청 대기중</div>
+      <div class="fn" id="fn-add" onclick="friendAdd(), changeTextStyle(this)">친구 추가</div>
+      <div class="fn" id="fn-searchserver" onclick="searchServer(), changeTextStyle(this)">서버 추가</div>
+    </div>
+
+    <!-- 친구 목록 화면-->
+    <div class="friendList">
+      <div class="fn-online-list" id="friendOnlineList"> </div>
+      <div class="fn-all-list" id="friendAllList"> 
+          <div id="friendTotalList"> </div>
+      </div>
+
+      <!-- 요청 화면-->
+      <div class="fn-waiting-list" id="friendWaitingList"> 
+        <div id="friendreceive"> 
+          <div id="receiveTitle"> 받은 친구 요청 </div>
+          <div id="friendreceiveNo"> </div> 
+          <table id="friendreceiveIndex">
+            <tr>
+              <td> 프로필 사진 </td>
+              <td> 이메일 </td>
+              <td> 고유 이름 </td>
+              <td> 디스플레이 이름 </td>
+              <td>  </td>
+            </tr>
+          </table>
+
+          <table id="friendreceiveList"> </table>
+            <form id="acceptrequestForm">
+              <input name="friend1" type="hidden" id="tosendFriend">
+              <input name="friend2" type="hidden" id="receiveFirend">
+            </form>
+            <form id="refuseForm">
+              <input id="sessionIdVal" type="hidden" th:value="${sessionId}" name="friendRequestSender">
+              <input id="refuseSend" type="hidden" name="friendRequestReceiver">
+            </form>
+        </div>
+
+        <div id="friendsend"> 
+          <div id="sendTitle"> 보낸 친구 요청 </div>
+          <div id="friendsendNo"> </div> 
+          <table id="friendsendIndex">
+            <tr>
+              <td> 프로필 사진 </td>
+              <td> 이메일 </td>
+              <td> 고유 이름 </td>
+              <td> 디스플레이 이름 </td>
+              <td>  </td>
+            </tr>
+          </table>
+          <table id="friendsendList"> </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 친구 추가 모달 -->
+  <div id="addFriendMain" class="modal" style="display:none;">
+    <img src="image/close.png" width="25px" onclick="closeFriendAdd()" id="addFriendMainclose">
+    <div id="addFriendSelect">
+      <label for="type" id="typeLabel"> 검색 유형 </label>
+      <select id="type">
+        <option value="null" selected disabled>선택</option> 
+        <option id="findByEmail" value="findByEmail"> 이메일 </option>
+        <option id="findByName" value="findByName"> 고유 이름 </option>
+        <option id="findByDisplayName" value="findByDisplayName"> 디스플레이 이름 </option>
+      </select>
+    </div>
+
+    <input type="text" id="addFriendInput" oninput="findFriendInput()"> 
+    <div id="checkFriend">
+      <table id="friendInfoIndex">
+        <tr>
+          <tr>
+            <td id="friendImgTag"> </td>
+            <td id="friendEmailTag"> 이메일 </td>
+            <td id="friendNameTag"> 고유 이름 </td>
+            <td id="friendDisplayNameTag"> 디스플레이 이름 </td>
+          </tr>
+        </tr>
+      </table>
+      <table id="friendInfo"></table>
+    </div>
+
+    <form id="addFriendForm">
+      <button id="addFriendBtn" onclick="addFriendSubmit(event)"> 친구 추가 </button>
+      <input type="hidden" th:value="${sessionId}" name="friendRequestSender" id="sessionIdVal">
+      <input id="toSend" type="hidden" name="friendRequestReceiver">
+    </form>
+  </div>
+
+  <!-- 서버 찾기 모달-->
+  <div id="serverAdd">
+    <div id="serverAddTitle"> 서버 추가 </div>
+    <img src="image/close.png" width="25px" onclick="closeserverAdd()" id="severAddClose">
+    <div id="serverTotalArea"> </div>
+  </div>
+  
+  <!--서버 가입 폼-->
+  <form id="serverJoinForm">
+    <input type="hidden" id="serverMemberUser" name="serverMemberUser">
+    <input type="hidden" id="serverMemberServer" name="serverMemberServer">
+  </form>
+
+  <!-- 서버 만들기 모달-->
+  <div id="createServerMain"> 
+    <div id="closeBtn" onclick="closeModal()"> <img src="/image/close.png" > </div>
+    <div id="title"> 서버를 만들어 보세요 </div>
+    <div id="createServerInfo"> 서버는 친구들과 함께 어울리는 공간입니다. <br>
+      서버를 만들어 친구들과 대화를 시작하세요.
+    </div>
+    <button id="createServerBtn" onclick="moveSecondPage()"> 서버 만들기 </button>
+  </div>
+    
+  <div id="createServerDetail">
+    <div id="closeBtn" onclick="closeModal()"> <img src="/image/close.png" > </div>
+    <div id="title"> 서버 만들기 </div>
+    <div id="info"> 서버의 이름과 아이콘을 만들고 <br> 
+    서버를 소개해주세요.
+    </div>
+
+    <form  method="post" id="serverCreateForm"  enctype="multipart/form-data">
+      <div id="uploadPicture">
+        UPLOAD
+      </div>
+      <input name="file" type="file" 
+      data-file-upload form="dataFileUpload" id="fileUploadBtn">
+      <div id="preview"></div>
+      <div id="serverNameTag"> 서버 이름 </div>
+      <input type="text" id="serverNameInput" name="serverName"> 
+
+      <div id="serverInfoTag"> 서버 설명 </div>
+      <input type="text" id="serverInfoInput" name="serverDesc">
+      
+      <input type="button" value="만들기" id="createServerBtn" onclick="uploadFile(event)" >
+      <input type="hidden" name="serverOwner" th:value="${sessionId}">
+      <input type="hidden" name="serverPfp" data-server-pfp >
+    </form>
+
+    <form method="post" id="dataFileUpload"></form>
+
+    <form id="severMemberForm">
+      <input type="hidden" id="serverMemberServer" name="serverMemberServer" >
+      <input  type="hidden" id="serverMemberUser" name="serverMemberUser">
+    </form>
+
+    <form id="channelForm">
+      <input name="channelName" type="hidden" id="channelName">
+      <input name="channelServer" type="hidden" id="channelServer">
+    </form>
+  </div> 
+
+  <!-- 친구 프로필 자세히 보기-->
+  <div id="friendViewModal">
+    <div id="friendVieWCloseBtn" onclick="closeFriendView()"> <img src="/image/close.png" id="closeBtn" > </div>
+    <div id="friendView"> </div>
+  </div>
+
+  <!-- DM 메세지 창 id 보내기-->
+  <div id="dmModal">
+    <div id="dmModalTitle"> 다이렉트 메세지 </div>
+    <div onclick="closeDmModal()"> <img src="/image/close.png" id="dmcloseBtn"> </div>
+    <div id="dmModalList"> </div>
+  </div>
+
+  <!-- 그룹챗 화면-->
+  <div id="groupChatScreen"> 
+      <input type="hidden" value="" id="groupchatId">
+      <div id="groupchatNav">
+        <div id="groupChatHead">  </div>  
+      </div>
+      
+      <!-- 채팅 창-->
+      <div class="groupChatContent">
+        <div class="messageBox"> <!--메세지 전체 부분-->
+          <!--메세지 탬플릿-->
+          <div id="messageTemplate">
+            <div class="messageReplyToInfo"></div>
+            <div class="messageInfo">
+              <div class="messageInfoCore">
+                <img class="messageInfoUserPfp" height="30">
+                <span class="messageInfoUserName displayMessageInfoText"></span>
+                <span class="messageInfoRegDate displayMessageInfoText"></span>
+              </div>
+                <button class="moreOptions"><img src="/image/more-options.png" height="10" ></button>
+            <div class="moreOptionsModal noneDisplay">
+            </div>
+            </div>
+            <div class="messageContent">
+              <div class="displayMessageText"></div>
+              <div class="displayMessageMedia">
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="messageMediaDisplayBox">
+  
+        </div>
+  
+        <div class="messageInputBox"> <!-- 메세지 인풋 박스-->
+            <div class="groupChatMediaContainer">
+              <div class="groupChatMediaButton" onclick="openMediaSelection()">
+                +
+              </div>
+            </div>
+            <div class="messageTextContainer">
+              <span></span>
+              <textarea name="messageContent" class="messageText" form="messageForm"></textarea>
+            </div>
+            <div class="groupChatSubmitContainer">
+              <button class="groupChatSubmitButton" onclick="submitMessage()">작성</button>
+            </div>
+        </div>
+      </div>
+      
+
+    <!--메세지 폼-->
+    <form id="messageForm">
+      <input id="fileInput" name="files" type="file" multiple="multiple" style="visibility: hidden">
+      <input name="messageUser" th:value="${sessionId}" type="hidden">
+      <input name="messageReplyTo" id="messageReplyTo" type="hidden">
+    </form>
+   
+
+    <!-- 그룹챗 친구 목록-->
+      <div id="groupchatFriendList"></div>
+    </div>
+  
+  <!-- 그룹챗 폼-->
+  <form id="groupchat">
+    <input type="hidden" name="inviter" id="dminviter">
+    <input type="hidden" name="invitees" id="dminvitees">
+  </form>
+
+  <!--이미지 확대 관련-->
+  <div class="expandedImage">
+    <img class="closeExpandedImage noneDisplay" src="/image/close.png" onclick="closeExpandedImage()">
+    <img class="expandedImageContent" height="500">
+  </div>
+
+  <div class="expandedVideo noneDisplay">
+    <img class="closeExpandedImage noneDisplay" src="/image/close.png" onclick="closeExpandedImage()">
+    <video class="expandedVideoContent" controls="controls"></video>
+  </div>
+
+  <img class="darkCover noneDisplay" onclick="closeExpandedImage()">
+
+  <script src="/js/channels_main.js"></script>
+</body>
+</html>
