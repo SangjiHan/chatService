@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=264DE4" alt="CSS3 badge">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000&color=323330" alt="JavaScript badge">
     <img src="https://img.shields.io/badge/JSP-F7E03C?style=for-the-badge&logo=java&logoColor=white&color=323330" alt="JSP badge">
-    <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white&color=005B96" alt="Java badge">
+    <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white&color=005B96" alt="Java badge"> <br>
     <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white&color=000000" alt="Oracle badge">
     <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white&color=E1E1E1" alt="Maven badge">
     <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&color=000000" alt="Git badge">
@@ -50,7 +50,7 @@
 
 <br>
 
- ![날씨](https://github.com/SangjiHan/weather/assets/133099077/31ddbb8c-3107-44c0-ba9a-be8929283d04)
+ 
 
 
 
@@ -78,19 +78,22 @@
 
 
 
+### 파일 설치 가이드 : 
+파일을 다운로드 받으시고 vs code에서 열어주세요. <br/>
+jdk17을 다운 받으시고 환경변수 편집으로 path를 설정해주세요. <br/>
 
-설정파일 생성 가이드: 
-charservice/src/resources/ 폴더에 application.properties라는 이름으로 파일을 생성해주세요
-application.properties 안에 작성해야할 내용(중괄호 안은 자기가 채움)
-spring.application.name=chatservice server.port={톰켓 포트번호}
-spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XE 
-spring.datasource.username={db 사용자} 
-spring.datasource.password={db 비밀번호} 
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+### 설정파일 생성 가이드 : 
+charservice/src/resources/ 폴더에 application.properties라는 이름으로 파일을 생성해주세요. <br/>
+아래는 application.properties 안에 작성해야할 내용입니다. 중괄호 안에 내용은 환경설정에 맞게 작성해주세요. <br/>
+spring.application.name=chatservice server.port={톰켓 포트번호} <br/>
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XE <br/>
+spring.datasource.username={db 사용자} <br/>
+spring.datasource.password={db 비밀번호} <br/>
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver <br/>
 
-spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.ddl-auto=update <br/>
 
-media.filepath=chatservice\src\main\resources\static\media 
-spring.servlet.multipart.max-file-size=-1 spring.servlet.multipart.max-request-size=-1
+media.filepath=chatservice\src\main\resources\static\media <br/>
+spring.servlet.multipart.max-file-size=-1 spring.servlet.multipart.max-request-size=-1 <br/>
 
-size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 message.number=25
+size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 message.number=25 <br/>
