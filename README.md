@@ -8,14 +8,14 @@
 </div>
 <br>
 
-<div align = "center">
-    <img src="https://img.shields.io/badge/HTML-0000CD?style=for-the-badge&logo=html5&logoColor=white&color=DC143C">
-    <img src="https://img.shields.io/badge/css-ADD8E6?style=for-the-badge&logo=css3&logoColor=00CED1&color=000080">
-    <img src="https://img.shields.io/badge/Javascript-90EE90?style=for-the-badge&logo=javascript&logoColor=FFFF00&color=808080">
-    <img src="https://img.shields.io/badge/JSON-778899?style=for-the-badge&logo=json&logoColor=FF8C00&color=9932CC">
-  <img src="https://img.shields.io/badge/Spring-778899?style=for-the-badge&logo=Spring&logoColor=FF8C00&color=9932CC">
-  <img src="https://img.shields.io/badge/Oracle-black?style=for-the-badge&logo=Oracle&logoColor=orange&color=white">
-  <img src="https://img.shields.io/badge/Websocket-778899?style=for-the-badge&logo=Websocket&logoColor=FF8C00&color=9932CC">
+<div align="center">
+    <img src="https://img.shields.io/badge/HTML-0000CD?style=for-the-badge&logo=html5&logoColor=white&color=F16529" alt="HTML badge">
+    <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=264DE4" alt="CSS badge">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000&color=323330" alt="JavaScript badge">
+    <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white&color=F7E03C" alt="JSON badge">
+    <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white&color=4A5B4D" alt="Spring badge">
+    <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white&color=000000" alt="Oracle badge">
+    <img src="https://img.shields.io/badge/WebSocket-000000?style=for-the-badge&logo=Websocket&logoColor=white&color=4A4A4A" alt="WebSocket badge">
 </div>
 
 <br>
