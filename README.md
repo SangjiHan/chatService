@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/Javascript-90EE90?style=for-the-badge&logo=javascript&logoColor=FFFF00&color=808080">
     <img src="https://img.shields.io/badge/JSON-778899?style=for-the-badge&logo=json&logoColor=FF8C00&color=9932CC">
   <img src="https://img.shields.io/badge/Spring-778899?style=for-the-badge&logo=Spring&logoColor=FF8C00&color=9932CC">
-  <img src="https://img.shields.io/badge/Oracel-778899?style=for-the-badge&logo=Oracel&logoColor=FF8C00&color=9932CC">
+  <img src="https://img.shields.io/badge/Oracle-black?style=for-the-badge&logo=Oracle&logoColor=orange&color=white">
   <img src="https://img.shields.io/badge/Websocket-778899?style=for-the-badge&logo=Websocket&logoColor=FF8C00&color=9932CC">
 </div>
 
