@@ -1,13 +1,36 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:4682B4,100:AFEEEE&height=200&text=실시간%20채팅%20사이트&fontColor=000000&fontSize=40&width=700&fontAlignY=35)
 
-<div align = "center">
-방성영 : 프로젝트 총괄, 기능 구현 <br>
-한상지 : Restful API, DB, Javascript, 데이터 송수신 <br>
-김예은 : 사용자 UI/UX <br>
+### 팀원 소개 <br/>  
+방성영 : 프로젝트 총괄, 기능 구현 <br/>
+한상지 : Restful API, DB, Javascript, 데이터 송수신 <br/>
+김예은 : 사용자 UI/UX <br/>
 
-</div>
 <br>
 
+### 기술스택 <br/> 
+**개발 환경**
+- **IDE**: STS4, Visual Studio Code
+
+**개발 언어**
+- HTML5
+- CSS3
+- JavaScript
+- Java
+- JSP
+
+**데이터베이스**
+- Oracle
+
+**빌드 도구**
+- Maven
+
+**형상 관리**
+- Git
+
+**프레임워크**
+- Spring Boot
+- JPA
+- WebSocket
 
 <div align="center">
     <img src="https://img.shields.io/badge/HTML5-0000CD?style=for-the-badge&logo=html5&logoColor=white&color=F16529" alt="HTML5 badge">
