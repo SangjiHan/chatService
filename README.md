@@ -1,6 +1,8 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:4682B4,100:AFEEEE&height=200&text=실시간%20채팅%20사이트&fontColor=000000&fontSize=40&width=700&fontAlignY=35)
 
-![그림1](https://github.com/user-attachments/assets/8054519d-3c69-45bc-a456-4f334e088c27)
+<div style="text-align: center;">
+    <img src="https://github.com/user-attachments/assets/8054519d-3c69-45bc-a456-4f334e088c27" alt="그림1">
+</div>
 
 ## 파일 설치 가이드 <br/>
 파일을 다운로드 받으시고 vs code에서 열어주세요. <br/>
