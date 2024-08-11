@@ -6,7 +6,7 @@
 파일을 다운로드 받으시고 vs code에서 열어주세요. <br/>
 jdk17을 다운 받으시고 환경변수 편집으로 path를 설정해주세요. <br/>
 Oracel를 설치하고 sql 데이터를 참고하여 테이블을 생성해주세요. <br/>
-
+  <br/><br/><br/> 
 ## 설정파일 생성 가이드  <br/>
 charservice/src/resources/ 폴더에 application.properties라는 이름으로 파일을 생성해주세요. <br/>
 아래는 application.properties 안에 작성해야할 내용입니다. 중괄호 안에 내용은 환경설정에 맞게 작성해주세요. <br/>
@@ -78,10 +78,12 @@ size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 messa
 ## 프로젝트 기간 : 2024.05 ~ 2024.06 <br/><br/><br/>  
 
  # 🏃:프로젝트 설명
-  실시간 채팅 서비스 구현  <br/>
-일대일, 다인원 채팅방 생성  <br/>
-    이미지, 동영상 전송 가능  <br/>
-  <br/><br/><br/> 
+  실시간 채팅 사이트입니다.  <br/>
+  친구를 찾아 소통을 할 수 있습니다. <br/>
+일대일, 다인원 채팅이 가능합니다.  <br/>
+    텍스트뿐만 아니라 이미지, 동영상 전송 가능이 가능합니다.  <br/>
+   서버를 생성하여 기능에 맞게 채팅을 할 수 있습니다.  <br/>
+
 
 <br/><br/><br/>  
  # 주요 기능
