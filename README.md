@@ -28,7 +28,7 @@ size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 messa
 
 ### 팀원 소개 <br/>  
 **방성영** : 프로젝트 총괄, 기능 구현 <br/>
-**한상지** : Restful API, DB, Javascript, 데이터 송수신 <br/>
+**한상지** : Restful API, Javascript, 데이터 송수신 <br/>
 **김예은** : 사용자 UI/UX 기능 구현 <br/>
 
 <br>
