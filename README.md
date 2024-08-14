@@ -1,121 +1,117 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=0:4682B4,100:AFEEEE&height=200&text=실시간%20채팅%20사이트&fontColor=000000&fontSize=40&width=700&fontAlignY=35)
-
-<div style="text-align: center;">
-    <img src="https://github.com/user-attachments/assets/8054519d-3c69-45bc-a456-4f334e088c27" alt="그림1">
-</div>
-
-## 파일 설치 가이드 <br/>
-파일을 다운로드 받으시고 vs code에서 열어주세요. <br/>
-jdk17을 다운 받으시고 환경변수 편집으로 path를 설정해주세요. <br/>
-Oracel를 설치하고 sql 데이터를 참고하여 테이블을 생성해주세요. <br/>
-  <br/><br/><br/> 
-## 설정파일 생성 가이드  <br/>
-charservice/src/resources/ 폴더에 application.properties라는 이름으로 파일을 생성해주세요. <br/>
-아래는 application.properties 안에 작성해야할 내용입니다. 중괄호 안에 내용은 환경설정에 맞게 작성해주세요. <br/>
-spring.application.name=chatservice server.port={톰켓 포트번호} <br/>
-spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XE <br/>
-spring.datasource.username={db 사용자} <br/>
-spring.datasource.password={db 비밀번호} <br/>
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver <br/>
-spring.jpa.hibernate.ddl-auto=update <br/>
-media.filepath=chatservice\src\main\resources\static\media <br/>
-spring.servlet.multipart.max-file-size=-1 spring.servlet.multipart.max-request-size=-1 <br/>
-size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 message.number=25 <br/>
-
-<br/><br/><br/>
-
-# 프로젝트 소개 <br/> 
-
-### 팀원 소개 <br/>  
-**방성영** : 프로젝트 총괄, 기능 구현 <br/>
-**한상지** : Restful API, Javascript, 데이터 송수신 <br/>
-**김예은** : 사용자 UI/UX 기능 구현 <br/>
-
-<br>
-
-<div>
-    <img src="https://img.shields.io/badge/HTML5-0000CD?style=for-the-badge&logo=html5&logoColor=white&color=F16529" alt="HTML5 badge">
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=264DE4" alt="CSS3 badge">
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000&color=323330" alt="JavaScript badge">
-    <img src="https://img.shields.io/badge/JSP-F7E03C?style=for-the-badge&logo=java&logoColor=white&color=323330" alt="JSP badge">
-    <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white&color=005B96" alt="Java badge"> <br>
-    <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white&color=000000" alt="Oracle badge">
-    <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white&color=E1E1E1" alt="Maven badge">
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&color=000000" alt="Git badge">
-    <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white&color=4A5B4D" alt="Spring Boot badge">
-    <img src="https://img.shields.io/badge/JPA-007396?style=for-the-badge&logo=java&logoColor=white&color=F8C300" alt="JPA badge">
-    <img src="https://img.shields.io/badge/WebSocket-000000?style=for-the-badge&logo=WebSocket&logoColor=white&color=4A4A4A" alt="WebSocket badge">
-</div>
-
-### 기술스택 <br/> 
-**개발 환경**
-- **IDE**: STS4, Visual Studio Code
-
-**개발 언어**
-- HTML5
-- CSS3
-- JavaScript
-- Java
-- JSP
-
-**데이터베이스**
-- Oracle
-
-**빌드 도구**
-- Maven
-
-**형상 관리**
-- Git
-
-**프레임워크**
-- Spring Boot
-- JPA
-- WebSocket
+![header](https://capsule-render.vercel.app/api?type=EGG&color=0:4B0082,100:4B0082&height=200&text=실시간%20웹%20채팅&fontColor=FFFFFF&fontSize=40&width=700&fontAlignY=50)
 
 
+<br />
 
-<br>
+# 👋 소개
 
+> 실시간 웹 채팅 사이트입니다.  <br />
+> 친구를 추가하고 다양한 채팅 방을 생성하여 소통할 수 있습니다. <br />
+> 회원 가입 후에는 친구와 직접 대화를 나누거나, 주제에 맞는 서버를 생성해 다양한 대화를 즐길 수 있습니다. <br />
+> 동영상과 사진을 첨부하여 공유하고 재생할 수 있는 기능도 지원합니다. <br />
+> 지금 가입하여 친구와 소통해보세요!<br />
 
-## 프로젝트 기간 : 2024.05 ~ 2024.06 <br/><br/><br/>  
+<br />
 
- # 🏃:프로젝트 설명
-  실시간 채팅 사이트입니다.  <br/>
-  친구를 찾아 소통을 할 수 있습니다. <br/>
-일대일, 다인원 채팅이 가능합니다.  <br/>
-    텍스트뿐만 아니라 이미지, 동영상 전송 가능이 가능합니다.  <br/>
-   서버를 생성하여 기능에 맞게 채팅을 할 수 있습니다.  <br/>
+# 🧑‍🤝‍🧑 팀원 소개
 
+- **방성영(팀장)** : 백엔드 개발 및 기능 구현
+- **김예은** : 사용자 페이지 UI/UX 디자인
+- **[한상지](https://github.com/SangjiHan)** : 프론트엔드 개발, 정적 페이지를 동적 페이지로 변환, RESTful API 설계 및 구현, 데이터베이스 설계 및 데이터 입력
+  
+<br />
 
-<br/><br/><br/>  
- # 주요 기능
+# 프로젝트 기간
+> 2024.05 ~ 2024.06
 
-## 로그인 및 회원가입 <br/>
-![그림2](https://github.com/user-attachments/assets/dbe426a4-aa8f-4677-b561-7c7b797ecd97)
-![그림3](https://github.com/user-attachments/assets/d6cd09ea-0fd5-40b0-9259-e00b53262b7e) <br/>
-로그인과 회원가입으로 사이트의 회원이 되어보세요!  <br/>
- <br/><br/>
-## 실시간 채팅 <br/>
-![그림1](https://github.com/user-attachments/assets/8054519d-3c69-45bc-a456-4f334e088c27) <br/>
+<br />
 
-텍스트를 보내 실시간 채팅 서비스가 가능합니다. <br/>
-이미지와 동영상도 보낼 수 있습니다. <br/>
-메세지 수정, 삭제 기능이 가능합니다. <br/>
-<br/><br/>
-## 친구 찾기 및 친구 리스트 <br/>
-![그림4](https://github.com/user-attachments/assets/0da1c07e-1599-42a3-a4bd-870cfd15daa6)
-![그림5](https://github.com/user-attachments/assets/1bcef62f-f365-4198-85bb-b0c0937c87d1) <br/>
-
-친구를 찾아 메세지를 보낼 수 있습니다.<br/>
-친구의 이메일, 이름을 검색하여 친구를 찾을 수 있습니다.<br/>
-<br/><br/>
-# 서버 기능 <br/>
-![그림6](https://github.com/user-attachments/assets/3fdecd24-0513-466e-b0d7-41651e48d417) <br/>
-
-사용 용도 별로 서버를 생성할 수 있습니다. <br/>
-다양한 용도로 서버를 사용할 수 있습니다. <br/>
-다수의 인원과 채팅을 할 수 있습니다. <br/>
+# 개발 도구
+- 개발 언어 <img src="https://img.shields.io/badge/HTML5-F16529?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 badge"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 badge"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000" alt="JavaScript badge"> <img src="https://img.shields.io/badge/JAVA-F7E03C?style=for-the-badge&logo=java&logoColor=000000" alt="JAVA badge"> <img src="https://img.shields.io/badge/JSP-red?style=for-the-badge&logo=jsp&logoColor=gray" alt="JSP badge"> <br />
+- 개발 환경 <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode badge"> <br />
+- 데이터베이스 <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle badge"> <br />
+- 빌드 <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven badge"> <br />
+- 형상 관리 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&color=F05032" alt="Git badge"> <br />
+- 프레임워크 <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot badge"> <img src="https://img.shields.io/badge/JPA-0074CC?style=for-the-badge&logo=java&logoColor=white" alt="JPA badge"> <img src="https://img.shields.io/badge/MyBatis-00205B?style=for-the-badge&logo=mybatis&logoColor=white" alt="MyBatis badge"> <br />
+- 기타  <img src="https://img.shields.io/badge/WebSocket-6B6B6B?style=for-the-badge&logo=websocket&logoColor=white" alt="WebSocket badge">  <br />
+ <br />
 
 
+# 파일 설치 가이드
+- 프로젝트의 모든 파일을 다운로드하여 로컬 환경에 저장합니다. <br />
+- [VSCode 다운로드 페이지](https://code.visualstudio.com/)에서 VSCode를 다운로드하여 설치합니다. <br />
+- [JDK 17 다운로드 페이지](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)에서 JDK 17을 다운로드하여 설치합니다. <br />
+- JDK 설치 후, 환경변수 JAVA_HOME을 JDK가 설치된 경로로 설정합니다. <br />
+- [Oracle Database 다운로드 페이지](https://www.oracle.com/database/technologies/)에서 Oracle Database를 다운로드하여 설치합니다. <br />
+- 설치가 완료된 vscode를 실행합니다. <br />
+- 웹 브라우저를 열고 http://localhost:{톰켓 포트번호}를 입력하여 애플리케이션이 정상적으로 실행되는지 확인합니다. <br />
+<br />
+
+# 설정파일 생성 가이드  <br/>
+- charservice/src/resources/ 폴더에 application.properties라는 이름으로 파일을 생성해주세요. <br/>
+- 아래는 application.properties 안에 작성해야할 내용입니다. 중괄호 안에 내용은 환경설정에 맞게 작성해주세요. <br/>
+- spring.application.name=chatservice server.port={톰켓 포트번호} <br/>
+- spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XE <br/>
+- spring.datasource.username={db 사용자} <br/>
+- spring.datasource.password={db 비밀번호} <br/>
+- spring.datasource.driver-class-name=oracle.jdbc.OracleDriver <br/>
+- spring.jpa.hibernate.ddl-auto=update <br/>
+- media.filepath=chatservice\src\main\resources\static\media <br/>
+- spring.servlet.multipart.max-file-size=-1 spring.servlet.multipart.max-request-size=-1 <br/>
+- size.serverpfp=480 size.reaction=90 size.messagemedia=900 size.userpfp=480 message.number=25 <br/>
+<br/>
+
+# 프로젝트 소개
+
+## 시스템 구조도
+> ![image](https://github.com/user-attachments/assets/c2506d78-4b02-48dc-903b-b1ec9972c783) <br />
+> - 친구 리스트: 사용자는 자신의 친구 목록을 보고, 친구의 상태를 확인하며, 친구를 추가하거나 삭제할 수 있습니다. <br />
+> - 채팅방 생성: 사용자는 새로운 채팅방을 생성하고 일대일 채팅, 다인원 채팅을 할 수 있습니다. <br />
+> - 서버 생성: 사용자는 다양한 주제를 위한 서버를 생성하여 그룹 대화를 나눌 수 있습니다. <br />
+> - 사용자 정보 관리: 사용자는 자신의 프로필 정보를 수정하고, 비밀번호를 변경하거나 개인정보 설정을 조정할 수 있습니다. <br />
+
+
+<br />
+
+## 데이터 베이스
+> ![image](https://github.com/user-attachments/assets/4909be04-4f50-4eb1-87d9-9bdfb0937391)<br />
+> - CUID 형식: 데이터베이스는 CUID(Compact Unique Identifier) 형식을 사용하여 고유한 식별자를 생성합니다. <br />
+> - 기본키 및 외래키: 테이블 간의 관계를 정의하고 데이터의 무결성을 유지하기 위해 기본키와 외래키를 설정했습니다. <br />
+> - 연동과 무결성: 테이블 간의 연동이 용이하며, 데이터 무결성을 효과적으로 유지하도록 설계되었습니다. <br />
+
+<br />
+
+## 주요 기능 살펴보기 
+### 1. 로그인 및 회원가입
+> ![그림2](https://github.com/user-attachments/assets/dbe426a4-aa8f-4677-b561-7c7b797ecd97) ![그림3](https://github.com/user-attachments/assets/d6cd09ea-0fd5-40b0-9259-e00b53262b7e) <br />
+> - 유효성 검사: 회원가입 시 사용자가 입력한 정보에 대해 유효성 검사를 수행하여, 올바른 형식과 범위 내의 값만을 허용합니다. 예를 들어, 이메일 주소의 형식이 올바른지 확인하고 비밀번호가 지정된 복잡성 요구 사항을 충족하는지 검토합니다. <br />
+> - 중복 확인: 사용자가 입력한 정보(예: 이메일 주소, 사용자 이름 등)의 중복 여부를 체크하여, 이미 등록된 정보와의 충돌을 방지합니다. 이를 통해 사용자에게 고유한 계정을 보장하고, 기존 사용자와의 정보 충돌을 예방합니다. <br />
+
+<br />
+
+### 2. 채팅 화면
+>  ![그림1](https://github.com/user-attachments/assets/8054519d-3c69-45bc-a456-4f334e088c27) <br />
+> - 실시간 채팅: 텍스트 메시지를 실시간으로 주고받을 수 있어 즉각적인 소통이 가능합니다. <br />
+> - 미디어 전송: 이미지와 동영상을 채팅창에 첨부하여 공유할 수 있습니다. <br />
+> - 메시지 수정 및 삭제: 전송한 메시지를 수정하거나 삭제할 수 있는 기능을 제공합니다. 이를 통해 사용자는 실수로 전송한 메시지를 수정하거나 삭제할 수 있습니다. <br />
+
+<br />
+
+
+### 3. 친구 찾기 및 친구 리스트
+> ![그림4](https://github.com/user-attachments/assets/0da1c07e-1599-42a3-a4bd-870cfd15daa6) ![그림5](https://github.com/user-attachments/assets/1bcef62f-f365-4198-85bb-b0c0937c87d1) <br/>
+> - 친구 찾기: 사용자는 이메일 주소나 이름을 입력하여 친구를 검색하고, 해당 친구에게 메시지를 보낼 수 있습니다. <br />
+> - 친구 리스트: 자신의 친구 목록을 확인하고, 친구의 상태(온라인/오프라인)를 확인할 수 있습니다. <br />
+> - 친구 추가/삭제: 친구 요청을 보내거나, 기존 친구를 삭제하는 기능을 제공합니다. <br />
+
+<br />
+
+### 4. 서버 생성
+> ![그림12](https://github.com/user-attachments/assets/1a26f490-80e5-4dfb-b6cb-966ca02ebf7b) <br />
+> - 서버 생성: 사용자는 다양한 용도에 맞춰 새로운 서버를 생성할 수 있습니다. 각 서버는 특정 주제나 목적에 따라 설정할 수 있습니다. <br />
+> - 다양한 용도: 생성된 서버는 여러 가지 용도로 활용될 수 있으며, 주제에 맞는 대화를 나누거나 그룹 프로젝트, 이벤트 등을 위해 사용할 수 있습니다. <br />
+> - 다수 인원 지원: 서버 내에서 다수의 사용자와 동시에 채팅할 수 있어, 대규모의 그룹 대화나 협업이 가능합니다. <br />
+
+<br />
 
 
