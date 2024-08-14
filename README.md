@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=Soft&color=0:FF007F,100:00FFFF&height=200&text=실시간%20웹%20채팅&fontColor=FFFFFF&fontSize=40&width=700&fontAlignY=50)
+![header](https://capsule-render.vercel.app/api?type=Wave&color=0:FF007F,100:00FFFF&height=200&text=실시간%20웹%20채팅&fontColor=FFFFFF&fontSize=40&width=700&fontAlignY=50)
 
 
 <br />
