@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=Soft&color=0:00FF00,100:00FFFF&height=200&text=실시간%20웹%20채팅&fontColor=FFFFFF&fontSize=40&width=700&fontAlignY=50)
+![header](https://capsule-render.vercel.app/api?type=Soft&color=0:8A2BE2,100:00FFFF&height=200&text=실시간%20웹%20채팅&fontColor=FFFFFF&fontSize=40&width=700&fontAlignY=50)
 
 
 <br />
@@ -107,7 +107,7 @@
 <br />
 
 ### 4. 서버 생성
->  <br />
+>  ![image](https://github.com/user-attachments/assets/cf86499d-f004-4121-8125-2423bbc26c24) <br />
 > - 서버 생성: 사용자는 다양한 용도에 맞춰 새로운 서버를 생성할 수 있습니다. 각 서버는 특정 주제나 목적에 따라 설정할 수 있습니다. <br />
 > - 다양한 용도: 생성된 서버는 여러 가지 용도로 활용될 수 있으며, 주제에 맞는 대화를 나누거나 그룹 프로젝트, 이벤트 등을 위해 사용할 수 있습니다. <br />
 > - 다수 인원 지원: 서버 내에서 다수의 사용자와 동시에 채팅할 수 있어, 대규모의 그룹 대화나 협업이 가능합니다. <br />
